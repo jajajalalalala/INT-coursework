@@ -24,9 +24,27 @@
     )
 
 
-(:functions ;todo: define numeric functions here
+(:functions 
+	(Order-Left ?b - burger ?d - drink)
+	(total-time)
 )
 
-;define actions here
+(:durative-action bakeMeat
+)
 
+(:durative-action bakeBread
+)
+
+(:durative-action move
+)
+
+(:durative-action takeMeat
+)
+(:durative-action takeBread
+)
+(:durative-action makeBuger
+)
+(:durative-action makeDrink
+)
+(:durative-action deliverOrder
 )
