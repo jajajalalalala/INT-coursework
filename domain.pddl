@@ -5,7 +5,7 @@
 
 (:requirements :typing :durative-actions :fluents)
 
-(:types chef order_process softDrink burger plate area burger)
+(:types chef order_process softDrink plate area burger)
 
 ; un-comment following line if constants are needed
 ;(:constants )
