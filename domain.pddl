@@ -41,8 +41,8 @@
 (:durative-action bakeMeat
     :parameters(?c - chef ?meat_heater ?combination_point - area ?meat_plate - plate)
     :duration (=?duration 10)
-    :condition(over all(and(not_busy ?c)(is_not_busy ?meat_heater)(is_meatHeater ?meat_heater)(at ?c ?meat_heater) (is_meat_plate ?meat_plate))
-    )
+    :condition(and(at start(and(not_busy ?c)(is_not_busy ?meat_heater)))(over all((is_meatHeater ?meat_heater)(at ?c ?meat_heater) (is_meat_plate ?meat_plate))))
+    
     
     :effect(and(at start(and(is_busy ?c)(is_busy ?meat_heater)))
                 (at end(and((is_not_busy ?c)(is_not_busy ?meat_heater)(not(at ?c ?meat_heater))(at ?c ?combination_point)
@@ -54,8 +54,8 @@
 (:durative-action bakeBread
 :parameters(?c - chef ?bread_toaster ?combination_point - area ?bread_plate - plate)
     :duration (=?duration 5)
-    :condition(over all(and(not_busy ?c)(is_not_busy ?bread_toaster)(is_breadToaster ?bread_toaster)(at ?c ?bread_toaster) (is_bread_plate ?bread_plate))
-    )
+    :condition(and(at start(and(not_busy ?c)(is_not_busy ?bread_toaster)))(over all((is_breadToaster ?bread_toaster)(at ?c ?bread_toaster) (is_bread_plate ?bread_plate))))
+    
     
     :effect(and(at start(and(is_busy ?c)(is_busy ?bread_toaster)))
                 (at end(and((is_not_busy ?c)(is_not_busy ?bread_toaster)(not(at ?c ?bread_toaster))(at ?c ?combination_point)
@@ -70,8 +70,8 @@
 (:durative-action chopVegitable
 :parameters(?c - chef ?chop ?combination_point - area ?vegi_plate - plate)
     :duration (=?duration 3)
-    :condition(over all(and(not_busy ?c)(is_not_busy ?chop)(is_chopBoard ?chop)(at ?c ?chop) (is_vegi_plate ?vegi_plate))
-    )
+    :condition(and(at start(and(not_busy ?c)(is_not_busy ?chop)))(over all((is_chopBoard ?chop)(at ?c ?chop) (is_vegi_plate ?vegi_plate))))
+    
     
     :effect(and(at start(and(is_busy ?c)(is_busy ?chop)))
                 (at end(and((is_not_busy ?c)(is_not_busy ?chop)(not(at ?c ?chop))(at ?c ?combination_point)
@@ -106,8 +106,8 @@
 (:durative-action makeBuger
     :parameters(?vegi_plate ?meat_plate ?bread_plate ?burger_plate - plate ?c - chef ?order - order_process ?a - area) 
     :duration(= ?duration 2)
-    :condition (over all(and(>(cooked_meat_left ?meat_plate)0)(>(vegitable_left ?vegi_plate)0)(>(toasted_bread ?bread_plate)0)(at start(not_busy ?c))(>(burger_order_Left ?order)1)(is_combination_point ?a)))
+    :condition (and(over all(and(>(cooked_meat_left ?meat_plate)0)(>(vegitable_left ?vegi_plate)0)(>(toasted_bread ?bread_plate)0)(at start(not_busy ?c))(>(burger_order_Left ?order)1)(is_combination_point ?a)))(at start(not_busy ?c)))
     :effect(and(at start(is_busy ?c))
-    (at end(and((decrease (cooked_meat_left ?meat_plate)1)(decrease (vegitable_left ?vegi_plate)1)(decrease (toasted_bread ?bread_plate)1)(increase (burger_order_Left ?order)1)(is_not_busy ?c))))
+    (at end(and((decrease (cooked_meat_left ?meat_plate)1)(decrease (vegitable_left ?vegi_plate)1)(decrease (toasted_bread ?bread_plate)1)(decrease (burger_order_Left ?order)1)(not_busy ?c))))
     )
     )
