@@ -41,7 +41,8 @@
 (:durative-action bakeMeat
     :parameters(?c - chef ?meat_heater ?combination_point - area ?meat_plate - plate)
     :duration (=?duration 10)
-    :condition(and(at start(and(chef_not_busy ?c)(area_not_busy ?meat_heater)))(over all(and(is_meatHeater ?meat_heater)(at ?c ?meat_heater) (is_meat_plate ?meat_plate))))
+    :condition(and(at start(and(chef_not_busy ?c)(area_not_busy ?meat_heater)))
+                  (over all(and(is_meatHeater ?meat_heater)(at ?c ?meat_heater) (is_meat_plate ?meat_plate))))
     
     :effect (and(at start(not(chef_not_busy ?c)))
                 (at start(not(area_not_busy ?meat_heater)))
@@ -56,7 +57,7 @@
 :parameters(?c - chef ?bread_toaster ?combination_point - area ?bread_plate - plate)
     :duration (=?duration 5)
     :condition(and(at start(and(chef_not_busy ?c)(area_not_busy ?bread_toaster)))
-                (over all(and(is_breadToaster ?bread_toaster)(at ?c ?bread_toaster) (is_bread_plate ?bread_plate)))
+                  (over all(and(is_breadToaster ?bread_toaster)(at ?c ?bread_toaster) (is_bread_plate ?bread_plate)))
                 )
     
     
@@ -74,7 +75,8 @@
 (:durative-action chopVegitable
 :parameters(?c - chef ?chop ?combination_point - area ?vegi_plate - plate)
     :duration (=?duration 3)
-    :condition(and(at start(and(chef_not_busy ?c)(area_not_busy ?chop)))(over all(and(is_chopBoard ?chop)(at ?c ?chop) (is_vegi_plate ?vegi_plate))))
+    :condition(and(at start(and(chef_not_busy ?c)(area_not_busy ?chop)))
+                  (over all(and(is_chopBoard ?chop)(at ?c ?chop) (is_vegi_plate ?vegi_plate))))
     
     
     :effect (and(at start(not(chef_not_busy ?c)))
@@ -104,7 +106,7 @@
     :parameters(?c - chef ?a - area ?order - order_process)
     :duration (= ?duration 1)
     :condition(and (at start(and(area_not_busy ?a)(chef_not_busy ?c)(> (drink_order_Left ?order) 0) ))
-            (over all(and (is_combination_point ?a) (at ?c ?a)
+                   (over all(and (is_combination_point ?a) (at ?c ?a)
             ))
 )
     :effect (and (at start(not(chef_not_busy ?c)))
