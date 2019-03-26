@@ -28,9 +28,13 @@
 	(is_meatHeater meat_heater)
 	(is_chopBoard chop_board)
 	
-    (is_connect bread_toaster combination_point)
-    (is_connect meat_heater combination_point)
-    (is_connect chop_board combination_point)
+    (is_connect combination_point bread_toaster )
+    (is_connect combination_point meat_heater )
+    (is_connect combination_point chop_board)
+	
+	(is_connect bread_toaster combination_point )
+    (is_connect meat_heater combination_point )
+    (is_connect chop_board combination_point )
 	
     (is_meat_plate meat_plate)
     (=(cooked_meat_left meat_plate)0)
@@ -55,8 +59,8 @@
  
 (:goal (and
     ;todo: put the goal condition here
-    (burger_order_complete order_process1)
-    (drink_order_complete order_process1)
+    (=(burger_order_left order_process1)0)
+    (=(drink_order_left order_process1)0)
     )
 )
 )
