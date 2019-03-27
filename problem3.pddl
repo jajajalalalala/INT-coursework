@@ -1,6 +1,6 @@
 (define (problem order_test) (:domain restaurant_simulator)
 (:objects 
-    chef1 chef2 chef3 - chef
+    chef1 chef2 - chef
     order_process1 - order_process
     meat_plate vegi_plate bread_plate  - plate
     bread_toaster bread_toaster2 meat_heater chop_board combination_point - area
