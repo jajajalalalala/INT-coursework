@@ -13,9 +13,7 @@
 	(at chef1 combination_point)
 	(at chef2 combination_point)
 	
-    (burger_order_not_complete order_process1)
     (=(burger_order_left order_process1)5)
-    (drink_order_not_complete order_process1)
     (=(drink_order_Left order_process1)2)
 	
     (area_not_busy bread_toaster)

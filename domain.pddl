@@ -12,8 +12,7 @@
 
 (:predicates 
     (chef_not_busy ?c - chef) (at ?c - chef ?a - area) 
-    (is_meat_plate ?p - plate)(is_vegi_plate ?p - plate)(is_bread_plate ?p - plate);plate properties
-    (drink_order_complete ?order - order_process)(burger_order_complete ?order - order_process) (drink_order_not_complete ?order - order_process)(burger_order_not_complete ?order - order_process);process order properties
+    (is_meat_plate ?p - plate)(is_vegi_plate ?p - plate)(is_bread_plate ?p - plate);plate properties   
     (area_not_busy ?a - area)(is_breadToaster ?a - area)(is_meatHeater ?a - area)(is_chopBoard ?a - area)
     (is_combination_point ?a - area);predicates of area
     (is_connect ?from ?to - area); if two area are connected
@@ -101,7 +100,6 @@
 
 )
 ; make chef make drink atcombination point
-;(not(drink_order_complete ?order))
 (:durative-action makeDrink
     :parameters(?c - chef ?a - area ?order - order_process)
     :duration (= ?duration 1)
