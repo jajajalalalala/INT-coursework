@@ -30,7 +30,6 @@
     (cooked_meat_left ?p - plate)
     (vegitable_left ?p - plate)
     (toasted_bread ?p - plate)
-    (burger_left ?p - plate)
     
 
 )
