@@ -48,19 +48,16 @@
     (=(cooked_meat_left meat_plate)0)
     (=(vegitable_left meat_plate)0)
     (=(toasted_bread meat_plate)0)
-    (=(burger_left meat_plate )0)
 	
     (is_vegi_plate vegi_plate)
     (=(cooked_meat_left vegi_plate)0)
     (=(vegitable_left vegi_plate)0)
     (=(toasted_bread vegi_plate)0)
-    (=(burger_left vegi_plate)0)
 	
     (is_bread_plate bread_plate)
     (=(cooked_meat_left bread_plate)0)
     (=(vegitable_left bread_plate)0)
     (=(toasted_bread bread_plate)0)
-    (=(burger_left bread_plate)0)
 	
 
 )

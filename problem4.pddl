@@ -19,9 +19,7 @@
 	(at chef3 combination_point)
 	(at chef4 combination_point)
 	
-    (burger_order_not_complete order_process1)
     (=(burger_order_left order_process1)13)
-    (drink_order_not_complete order_process1)
     (=(drink_order_Left order_process1)6)
 	
     (area_not_busy bread_toaster1)
@@ -72,19 +70,17 @@
     (=(cooked_meat_left meat_plate)0)
     (=(vegitable_left meat_plate)0)
     (=(toasted_bread meat_plate)0)
-    (=(burger_left meat_plate )0)
 	
     (is_vegi_plate vegi_plate)
     (=(cooked_meat_left vegi_plate)0)
     (=(vegitable_left vegi_plate)0)
     (=(toasted_bread vegi_plate)0)
-    (=(burger_left vegi_plate)0)
 	
     (is_bread_plate bread_plate)
     (=(cooked_meat_left bread_plate)0)
     (=(vegitable_left bread_plate)0)
     (=(toasted_bread bread_plate)0)
-    (=(burger_left bread_plate)0)
+
 	
 
 )
